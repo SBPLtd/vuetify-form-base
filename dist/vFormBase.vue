@@ -127,7 +127,7 @@
           
           <!-- time -->
           <v-menu
-            v-if= "obj.schema.type === 'time'"
+            v-else-if= "obj.schema.type === 'time'"
             :close-on-content-click="false" :nudge-right="32" lazy transition="scale-transition" offset-y full-width min-width="290px"
           >
             <template v-slot:activator="{on}">
