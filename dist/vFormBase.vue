@@ -509,10 +509,6 @@ export default {
     combineObjectsToArray ({ data, schema }) {
       let arr = []
       Object.keys(data).forEach(key => {
-        if (!schema[key]) {
-          console.warn(`Property '${key}' in Data has no correspondingly Schema Property is not editable and keeps untouched!`)
-          return
-        }
         if (!isPlainObject(schema[key])) {
           console.warn(`Prop '${key}' must have a correspondingly Property in Schema with at least ${key}:{ type:'text'} as value.  Prop '${key}' is not editable and keeps untouched!`)
           return
