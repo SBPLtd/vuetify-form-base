@@ -124,6 +124,40 @@
             {{obj.schema.label}}
             <v-icon v-if="obj.schema.iconRight" right :dark="obj.schema.dark">{{obj.schema.iconRight}}</v-icon>
           </v-btn>
+          
+          <!-- time -->
+          <v-menu
+            v-if= "obj.schema.type === 'time'"
+            :close-on-content-click="false" :nudge-right="32" lazy transition="scale-transition" offset-y full-width min-width="290px"
+          >
+            <template v-slot:activator="{on}">
+              <v-text-field
+                v-on.prevent = "on"
+                v-bind = "obj.schema"
+                :value= "setValue(obj)"
+                @focus = "onFocus($event, obj)"
+                @input= "onInput($event, obj)"
+              ></v-text-field>
+            </template>
+            <v-time-picker :value= "setValue(obj)" @focus = "onFocus($event, obj)" @input= "onInput($event, obj)"></v-time-picker>
+          </v-menu>
+
+          <!-- date -->
+          <v-menu
+            v-else-if= "obj.schema.type === 'date'"
+            :close-on-content-click="false" :nudge-right="32" lazy transition="scale-transition"  offset-y full-width min-width="290px"
+            >
+              <template v-slot:activator="{on}">
+                <v-text-field
+                  v-on.prevent = "on"
+                  v-bind = "obj.schema"
+                  :value= "setValue(obj)"
+                  @focus = "onFocus($event, obj)"
+                  @input= "onInput($event, obj)"
+                ></v-text-field>
+              </template>
+            <v-date-picker :value= "setValue(obj)" @focus = "onFocus($event, obj)" @input= "onInput($event, obj)"></v-date-picker>
+          </v-menu>
 
           <!-- all other Types ->  see typeToComponent -->
           <div
