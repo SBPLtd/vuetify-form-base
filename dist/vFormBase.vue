@@ -126,6 +126,8 @@
           </v-btn>
           
           <!-- time -->
+           
+          
            <!-- <v-menu
             v-else-if= "obj.schema.type === 'time'"
             :close-on-content-click="false" :nudge-right="32" lazy transition="scale-transition" offset-y full-width min-width="290px"
@@ -210,8 +212,8 @@ const typeToComponent = {
   switch: 'v-switch',
   checkbox: 'v-checkbox',
   color: 'v-color-picker',
-  date: 'v-date-picker',
-  time: 'v-time-picker',
+  date: 'v-text-field',
+  time: 'v-text-field',
   textarea: 'v-textarea',
 
 }
