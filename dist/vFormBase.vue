@@ -4,6 +4,7 @@
       <v-flex
         v-show= "!obj.schema.hidden"
         :class= "getClassName(obj) + ' ' + obj.schema.flexClass"
+        v-bind="obj.schema.flexProps"
         v-touch= "{ left: () => onSwipe('left', obj), right: () => onSwipe('right', obj), up: () => onSwipe('up', obj), down: () => onSwipe('down', obj) }"
         :key= "index"
       >
