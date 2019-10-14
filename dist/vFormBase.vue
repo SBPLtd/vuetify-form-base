@@ -3,7 +3,7 @@
     <template v-for="(obj, index) in flatCombinedArraySorted" >
       <v-flex
         v-show= "!obj.schema.hidden"
-        :class= "getClassName(obj)"
+        :class= "getClassName(obj) + ' ' + obj.schema.flexClass"
         v-touch= "{ left: () => onSwipe('left', obj), right: () => onSwipe('right', obj), up: () => onSwipe('up', obj), down: () => onSwipe('down', obj) }"
         :key= "index"
       >
